@@ -27,7 +27,7 @@ public class PersonController : ControllerBase
     }
 
     [HttpGet("person")]
-    public async Task<ActionResult<bool>> GetPerson([FromQuery] string name)
+    public async Task<ActionResult<PersonResponse>> GetPerson([FromQuery] string name)
     {
         var res = await _personService.GetPersonByName(name);
 

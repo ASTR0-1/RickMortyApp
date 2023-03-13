@@ -26,7 +26,7 @@ public class ApiParser : IApiParser
     public async Task<EpisodeParseResult> ParseEpisodesAsync(string name)
     {
         var episodes = new List<Episode>();
-        string apiUrl = $"https://rickandmortyapi.com/api/episode/?name={HttpUtility.UrlPathEncode(name)}";
+        string apiUrl = $"https://rickandmortyapi.com/api/episode/?name={HttpUtility.UrlEncode(name)}";
 
         var httpClient = _httpClientFactory.CreateClient();
 
